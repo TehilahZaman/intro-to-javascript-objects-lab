@@ -30,6 +30,8 @@ Solve Exercise 3 here:
 */
 game.difficulty = ["easy", "medium", "hard"];
 
+console.log("exercise 3: ", game.difficulty);
+
 /*
 Exercise 4
 1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
@@ -39,7 +41,9 @@ Exercise 4
 Solve Exercise 4 here:
 */
 
-game.party.push(pokemon[0])
+game.party.push(pokemon[0]);
+
+console.log("exercise 4: ", game.party);
 
 /*
 Exercise 5
@@ -50,8 +54,9 @@ Exercise 5
 Solve Exercise 5 here:
 */
 
+game.party.push(pokemon[3], pokemon[6], pokemon[24]);
 
-game.party.push(pokemon[3], pokemon[6], pokemon[24])
+console.log("exercise 5: ", game.party);
 
 /*
 Exercise 6
@@ -62,13 +67,14 @@ Exercise 6
 Solve Exercise 6 here:
 */
 
-
 game.gyms.forEach((gym) => {
-    if (gym.difficulty < 3) {
-        gym.completed = true; 
-    }
-})
-        
+  if (gym.difficulty < 3) {
+    gym.completed = true;
+  }
+});
+
+console.log("exercise 6: ", game.gyms);
+
 /*
 Exercise 7
 1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
@@ -86,8 +92,9 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 
+game.party.splice(0, 4, pokemon[1], pokemon[4], pokemon[7], pokemon[25]);
 
-game.party.splice(0, 4, pokemon[1], pokemon[4], pokemon[7], pokemon[25])
+console.log("exercise 7: ", game.party);
 
 /*
 Exercise 8
@@ -97,11 +104,13 @@ Exercise 8
 Solve Exercise 8 here:
 */
 
-let partyNames = []
-    game.party.forEach((pokemon) => {
-    partyNames.push(pokemon.name)
-})
-    
+let partyNames = [];
+game.party.forEach((pokemon) => {
+  partyNames.push(pokemon.name);
+});
+
+console.log("exercise 8: ", partyNames);
+
 /*
 Exercise 9
 1. Can you print out all the starter Pokémon from the `pokemon` array?
@@ -110,12 +119,14 @@ Exercise 9
 
 Solve Exercise 9 here:
 */
-let starterPokemon = []
+let starterPokemon = [];
 pokemon.forEach((poke) => {
-    if (poke.starter) {
-        starterPokemon.push(poke.name);
-    }
-}); 
+  if (poke.starter) {
+    starterPokemon.push(poke.name);
+  }
+});
+
+console.log("exercise 9: ", starterPokemon);
 
 /*
 Exercise 10
@@ -130,9 +141,11 @@ Solve Exercise 10 here:
 */
 
 game.catchPokemon = (pokemonObj) => {
-    game.party.push(pokemonObj)
-}
+  game.party.push(pokemonObj);
+};
 //game.catchPokemon(pokemon[30])
+
+console.log("exercise 10: ", game.party);
 
 /*
 Exercise 11
@@ -148,14 +161,15 @@ Solve Exercise 11 here:
 */
 
 game.catchPokemon = (pokemonObj) => {
-    game.party.push(pokemonObj);
-    game.items[1].quantity -= 1
+  game.party.push(pokemonObj);
+  game.items[1].quantity -= 1;
 };
 
-
-game.catchPokemon(pokemon[23])
+game.catchPokemon(pokemon[23]);
 console.log(game.items);
 //console.log(game.items[1].quantity - 1);
+
+console.log("exercise 11: ", game.party, game.items);
 
 /*
 Exercise 12
@@ -165,10 +179,12 @@ Exercise 12
 Solve Exercise 12 here:
 */
 game.gyms.forEach((gym) => {
-    if (gym.difficulty < 6) {
-        gym.completed = true; 
-    }
-})
+  if (gym.difficulty < 6) {
+    gym.completed = true;
+  }
+});
+
+console.log("exercise 12: ", game.gyms);
 
 /*
 Exercise 13
@@ -194,19 +210,21 @@ Solve Exercise 13 here:
 */
 
 game.gymStatus = () => {
-    const gymTally = {
-        complete: 0,
-        incomplete: 0
+  const gymTally = {
+    complete: 0,
+    incomplete: 0,
+  };
+  game.gyms.forEach((gym) => {
+    if (gym.completed) {
+      gymTally.complete += 1;
+    } else {
+      gymTally.incomplete += 1;
     }
-    game.gyms.forEach((gym) => {
-        if (gym.completed) {
-            gymTally.complete +=1
-        } else {
-            gymTally.incomplete +=1
-        }
-})
-    console.log(gymTally) 
-}
+  });
+  console.log(gymTally);
+};
+
+console.log("exercise 13: ", game.gymStatus());
 
 /*
 Exercise 14
@@ -221,9 +239,9 @@ Solve Exercise 14 here:
 */
 
 game.partyCount = () => {
-    return game.party.length
-}   
-console.log('excercise 14', game.partyCount())
+  return game.party.length;
+};
+console.log("exercise 14: ", game.partyCount());
 
 /*
 Exercise 15
@@ -239,6 +257,8 @@ game.gyms.forEach((gym) => {
   }
 });
 
+console.log("exercise 15: ", game.gyms);
+
 /*
 Exercise 16
 1. Log the entire `game` object to the console. Take a moment to review the changes you've made throughout the exercises.
@@ -247,4 +267,6 @@ Exercise 16
 Solve Exercise 16 here:
 */
 
-console.log(game)
+console.log(game);
+
+console.log("exercise 16: ", game);
