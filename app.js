@@ -167,7 +167,6 @@ game.catchPokemon = (pokemonObj) => {
 
 game.catchPokemon(pokemon[23]);
 console.log(game.items);
-//console.log(game.items[1].quantity - 1);
 
 console.log("exercise 11: ", game.party, game.items);
 
@@ -223,8 +222,8 @@ game.gymStatus = () => {
   });
   console.log(gymTally);
 };
-
 console.log("exercise 13: ", game.gymStatus());
+// to print something when the function gym status is called, exchange console.log for return
 
 /*
 Exercise 14
@@ -270,3 +269,4 @@ Solve Exercise 16 here:
 console.log(game);
 
 console.log("exercise 16: ", game);
+
